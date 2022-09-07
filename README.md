@@ -1,5 +1,6 @@
 # ReactDjangoPortfolio
 
+####  Use `` /admin `` to use django admin to edit the portfolio info use   ` python manage.py createsuperuser `  to create login details
 
 
 <kbd><img src="https://drive.google.com/uc?id=1-_NeW09HBpv5xTAzBOFQRqKegFxUEskU"  /></kbd>
@@ -20,4 +21,6 @@
 ### Step 6:
      python manage.py migrate
 ### Step 7:
+     python manage.py createsuperuser
+### Step 8:
      python manage.py runserver
