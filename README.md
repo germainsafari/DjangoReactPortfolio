@@ -14,7 +14,7 @@
 ### Step 3: Install Node.js dependencies:
      npm install    
 ### Step 4:
-    pip install -r requirements.txt
+    npm run build
 ### Step 5:
      pip install -r requirements.txt
 ### Step 6:
