@@ -15,4 +15,6 @@ urlpatterns = [
          views.get_SocialMediaLinks, name='links'),
     path('progress-api/',
          views.get_MyProgress, name='progress'),
+    path('lang-icons-api/',
+         views.get_languages_icons, name='lang-icons'),
 ]

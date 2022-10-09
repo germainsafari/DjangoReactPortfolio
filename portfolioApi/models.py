@@ -2,17 +2,20 @@ from django.db import models
 
 
 class HomeDetails(models.Model):
-    greeting = models.CharField(max_length=30, blank=True, null=True)
-    name = models.CharField(max_length=100, blank=True, null=True)
+    greeting = models.CharField(
+        max_length=30, blank=True, null=True, verbose_name="Greetings (eg: Hello)")
+    name = models.CharField(max_length=100, blank=True,
+                            null=True, verbose_name="Full Name")
     job_title = models.CharField(max_length=100, blank=True, null=True)
-    par_inro = models.TextField(blank=True, null=True)
+    par_inro = models.TextField(
+        blank=True, null=True, verbose_name="Introduction")
     avatar_img = models.CharField(max_length=100, blank=True, null=True,
                                   verbose_name="Google Drive Image Id")
     hireMe_link = models.CharField(max_length=200, blank=True, null=True)
     cv_link = models.URLField(blank=True, null=True)
 
     class Meta:
-        verbose_name_plural = 'Home Section'
+        verbose_name_plural = 'Heros Section'
 
     def __str__(self):
         return self.name
@@ -21,8 +24,8 @@ class HomeDetails(models.Model):
 class SocialMediaLinks(models.Model):
     name = models.CharField(max_length=80, blank=True, null=True)
     social_icon = models.CharField(
-        max_length=60, blank=True, null=True, verbose_name="Social Media Icon (eg fa fa-facebook)")
-    link = models.URLField(blank=True, null=True)
+        max_length=60, blank=True, null=True, verbose_name="Icon (eg: fa -fa-twitter)")
+    link = models.URLField(blank=True, null=True),
 
     class Meta:
         verbose_name_plural = 'Social Media Links'
@@ -50,8 +53,7 @@ class ServicesOffred(models.Model):
     icon_image = models.CharField(max_length=100, blank=True, null=True,
                                   verbose_name="Google Drive Image Id")
     service_name = models.CharField(max_length=40, blank=True, null=True)
-    shadow_icon = models.CharField(
-        max_length=40, blank=True, null=True, verbose_name="Shadow icon(eg fa fa-snowflake-o)")
+    shadow_icon = models.CharField(max_length=40, blank=True, null=True)
     service_description = models.TextField(
         blank=True, null=True)
 
@@ -65,14 +67,24 @@ class ServicesOffred(models.Model):
 class MyProgress(models.Model):
     language = models.CharField(max_length=40, blank=True, null=True)
     percentage = models.IntegerField(blank=True, null=True)
-    icon = models.CharField(max_length=40, blank=True,
-                            null=True, verbose_name="icon (eg bx bxl-javascript)")
+    icon = models.CharField(max_length=40, blank=True, null=True)
 
     class Meta:
         verbose_name_plural = 'Skills Section'
 
     def __str__(self):
         return self.language
+
+
+class LanguagesIcons(models.Model):
+    icon = models.CharField(max_length=100, blank=True)
+    lang_name = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'Languages Icons'
+
+    def __str__(self):
+        return self.icon
 
 
 class Project(models.Model):
@@ -84,6 +96,7 @@ class Project(models.Model):
     Project_title = models.CharField(max_length=90, blank=True, null=True)
     Project_info = models.TextField(blank=True, null=True)
     project_link = models.URLField(blank=True, null=True)
+    demo_link = models.URLField(blank=True, null=True)
 
     class Meta:
         verbose_name_plural = 'Projects Section'
@@ -93,11 +106,15 @@ class Project(models.Model):
 
 
 class MyContact(models.Model):
-    contact_name = models.CharField(max_length=30, blank=True, null=True)
-    contact_info = models.CharField(max_length=100, blank=True, null=True)
+    icon = models.CharField(max_length=90, blank=True,
+                            null=True, verbose_name="Icon (eg: fa -fa-twitter)")
+    contact_name = models.CharField(
+        max_length=30, blank=True, null=True, verbose_name="Contact Name (eg: twitter)")
+    contact_info = models.CharField(
+        max_length=100, blank=True, null=True, verbose_name="Contact Info (eg: johndoe@gmail.com)")
 
     class Meta:
-        verbose_name_plural = 'ContactMe Section'
+        verbose_name_plural = 'Contacts Section'
 
     def __str__(self):
         return self.contact_name

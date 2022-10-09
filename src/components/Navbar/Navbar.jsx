@@ -1,60 +1,11 @@
 import "./Navbar.css";
-import $ from "jquery";
 import { Link } from "react-router-dom";
-
-// hambager menu
-$(document).ready(function () {
-  $(".menuBtn").click(function () {
-    $(this).toggleClass("act");
-    if ($(this).hasClass("act")) {
-      $(".mainMenu").addClass("act");
-    } else {
-      $(".mainMenu").removeClass("act");
-    }
-  });
-});
-
-// click scroll
-$(document).ready(function () {
-  $(".mainMenu li a").click(function (e) {
-    var targetHref = $(this).attr("href");
-
-    $("html, body").animate(
-      {
-        scrollTop: $(targetHref).offset().top,
-      },
-      1000
-    );
-    $(".mainMenu").removeClass("act");
-
-    if ($(this).hasClass("act")) {
-      $(".menuBtn").addClass("act");
-    } else {
-      $(".menuBtn").removeClass("act");
-    }
-
-    e.preventDefault();
-  });
-});
-
-// change navbar color on scroll
-$(function () {
-  $(document).scroll(function () {
-    var $nav = $(".navbur");
-    $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-  });
-});
-
-// toggle light and dark theme
-$(window).on("load", function () {
-  $(".toggle").on("click", () => {
-    $("body").toggleClass("light");
-  });
-});
+import Main from "./nav";
 
 const Navbar = () => {
   return (
     <>
+      <Main />
       <button type="button" className="mobile-nav-toggle d-lg-none">
         <i className="icofont-navigation-menu"></i>
       </button>
@@ -62,45 +13,52 @@ const Navbar = () => {
         <div className="container-fluid  navbur">
           <div className="navi">
             <div className="col-xl-12 d-flex align-items-center lefty">
-              <h5 className="ld-flex mr-auto devman">DevMan</h5>
+              <h5 className="ld-flex mr-auto devman">
+                <img
+                  src="https://code.google.com/images/developers.png"
+                  alt=""
+                />
+                Pro.dev <span className="blink"> _</span>
+              </h5>
               <nav className="nav-menu  mainMenu">
                 <ul>
-                  <li className="active">
-                    <a href="#home">Home</a>
+                  <li
+                    className="active"
+                    data-aos="fade-down"
+                    data-aos-duration="300"
+                  >
+                    <a href="#home"> Home</a>
                   </li>
-                  <li>
+                  <li data-aos="fade-down" data-aos-duration="600">
                     <a href="#about">About</a>
                   </li>
-                  <li>
+                  <li data-aos="fade-down" data-aos-duration="900">
                     <a href="#services">Services</a>
                   </li>
-                  <li>
+                  <li data-aos="fade-down" data-aos-duration="1200">
                     <a href="#skills">Skills</a>
                   </li>
 
-                  <li>
+                  <li data-aos="fade-down" data-aos-duration="1500">
                     <a href="#work">My Work</a>
                   </li>
 
-                  <li>
+                  <li data-aos="fade-down" data-aos-duration="1800">
                     <a href="#contact">Contact</a>
                   </li>
                 </ul>
               </nav>
-
+              <div className="nav-social">
+                <i className="fa fa-github"></i>
+              </div>
               <div className="left-btns">
                 <div class=" " id="theme-button2">
                   <input id="toggle" class="toggle" type="checkbox"></input>
                 </div>
                 <div>
-                  <a
-                    href=""
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="CvMe"
-                  >
-                    <button className="my-cv">Resume</button>
-                  </a>
+                  <div className="CvMe">
+                    <button className="my-cv">Contact Me</button>
+                  </div>
                 </div>
 
                 <div className=" " id="theme-button">

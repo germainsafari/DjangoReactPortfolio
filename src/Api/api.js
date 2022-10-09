@@ -1,7 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+// api url
 const baseUrl = "http://127.0.0.1:8000/api";
 
+// Heroes' Section
 export const HomeDetails = createApi({
   reducerPath: "HomeDetails",
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -12,6 +14,7 @@ export const HomeDetails = createApi({
   }),
 });
 
+// About
 export const AboutMe = createApi({
   reducerPath: "AboutMe",
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -22,6 +25,7 @@ export const AboutMe = createApi({
   }),
 });
 
+// Services
 export const Services = createApi({
   reducerPath: "Services",
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -32,6 +36,7 @@ export const Services = createApi({
   }),
 });
 
+// Skills
 export const Progress = createApi({
   reducerPath: "Progress",
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -41,6 +46,8 @@ export const Progress = createApi({
     }),
   }),
 });
+
+// Projects
 export const Projects = createApi({
   reducerPath: "Projects",
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -51,6 +58,7 @@ export const Projects = createApi({
   }),
 });
 
+// Contacts
 export const Contacts = createApi({
   reducerPath: "Contacts",
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -61,12 +69,24 @@ export const Contacts = createApi({
   }),
 });
 
+// Social Media
 export const SocialMedia = createApi({
   reducerPath: "SocialMedia",
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getSocialMedia: builder.query({
       query: () => "/links-api",
+    }),
+  }),
+});
+
+// Languages Icons
+export const LanguagesIcons = createApi({
+  reducerPath: "LanguagesIcons",
+  baseQuery: fetchBaseQuery({ baseUrl }),
+  endpoints: (builder) => ({
+    getLanguagesIcons: builder.query({
+      query: () => "/lang-icons-api",
     }),
   }),
 });
@@ -78,3 +98,4 @@ export const { useGetProgressQuery } = Progress;
 export const { useGetProjectsQuery } = Projects;
 export const { useGetContactsQuery } = Contacts;
 export const { useGetSocialMediaQuery } = SocialMedia;
+export const { useGetLanguagesIconsQuery } = LanguagesIcons;

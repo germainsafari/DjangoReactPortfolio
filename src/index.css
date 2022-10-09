@@ -208,35 +208,63 @@ section > div {
   position: fixed;
   display: flex;
   align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #000000 !important;
+  background: #0d0d14 !important;
 }
 .name-load {
-  color: var(--color-button-hover) !important;
+  color: #fff !important;
   font-family: helvetica, arial, sans-serif;
   position: absolute;
-  left: 45%;
+  /* left: 42.7%; */
   top: 57%;
   font-family: helvetica, arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 0.2em;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 8px;
+}
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 #preloader:before {
   content: "";
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 2px solid #e73c75 !important;
-  border-top-color: #e7e4fe !important;
+  border: 2px solid #45424d !important;
+  border-top-color: #e1dfec !important;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   -webkit-animation: animate-preloader 1s linear infinite;
   animation: animate-preloader 1s linear infinite;
 }
@@ -255,4 +283,21 @@ section > div {
   100% {
     transform: rotate(360deg);
   }
+}
+
+#style-2::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: var(--color-background);
+}
+
+#style-2::-webkit-scrollbar {
+  width: 12px;
+  background-color: var(--color-background);
+}
+
+#style-2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #69687e;
 }

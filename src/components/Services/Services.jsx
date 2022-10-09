@@ -25,7 +25,12 @@ const Services = () => {
           <div className="service-row">
             {services &&
               services.map((service) => (
-                <div className=" my-service">
+                <div
+                  className=" my-service"
+                  key={service.id}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1500"
+                >
                   <img src={`${img_300}${service.icon_image}`} alt="" />
                   <h4 className="web">{service.service_name}</h4>
                   <p className="service-info">{service.service_description}</p>

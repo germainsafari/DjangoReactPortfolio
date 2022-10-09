@@ -56,8 +56,16 @@ def get_MyProgress(request):
     serializer = MyProgressSerializer(details, many=True)
     return Response(serializer.data)
 
+
+@api_view(['GET'])
+def get_languages_icons(request):
+    details = LanguagesIcons.objects.all()
+    serializer = LanguagesIconsSerializer(details, many=True)
+    return Response(serializer.data)
+
+
 class Assets(View):
-    
+
     def get(self, _request, filename):
         path = os.path.join(os.path.dirname(__file__), 'static', filename)
 

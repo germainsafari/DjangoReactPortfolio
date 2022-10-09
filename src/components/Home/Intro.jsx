@@ -12,39 +12,68 @@ const Intro = () => {
   const [homeDetails, setHomeDetails] = useState(homeData);
   const [contacts1Details, setContact2Details] = useState(conta);
   const img_300 = "http://drive.google.com/uc?id=";
+  const doc = homeDetails && homeDetails.map((detail2) => detail2.name);
 
   useEffect(() => {
     setHomeDetails(homeData);
     setContact2Details(conta);
 
-    console.log(conta);
-  }, [homeDetails, homeData, contacts1Details, conta]);
+    document.title = doc;
+
+    // console.log(conta);
+  }, [homeDetails, homeData, contacts1Details, conta, doc]);
   if (isFetching) return "loading";
 
   return (
     <>
       {homeDetails &&
         homeDetails.map((detail) => (
-          <section className=" intro-page" id="home">
+          <section className=" intro-page" id="home" key={detail.id}>
             <div className="decorations">
               <div className="decor-dot2">
                 <img src={decor3} alt="" />
               </div>
-              <div className="decor-box">
-                <img src={decor4} alt="" />
-              </div>
+
               <div className="parcol"></div>
             </div>
             <div className="small-intro">
               <div className="intro-row">
                 <div className="col-lg-5  col-md-6 col-sm-12 intro-left">
                   <div className="intro-name">
-                    <h3 className="hello">{detail.job_title}</h3>
-                    <h3 className="name">Hey! I Am</h3>
-                    <h3 className="job">{detail.name}</h3>
-                    <p className="myinfo">{detail.par_inro}</p>
+                    <h3
+                      className="hello"
+                      data-aos="fade-down"
+                      data-aos-duration="1500"
+                    >
+                      {detail.job_title}
+                    </h3>
+                    <h3
+                      className="name"
+                      data-aos="fade-down"
+                      data-aos-duration="1600"
+                    >
+                      Hey! I Am
+                    </h3>
+                    <h3
+                      className="job  text-animate"
+                      data-aos="fade-down"
+                      data-aos-duration="1700"
+                    >
+                      {detail.name}
+                    </h3>
+                    <p
+                      className="myinfo"
+                      data-aos="fade-down"
+                      data-aos-duration="1800"
+                    >
+                      {detail.par_inro}
+                    </p>
                   </div>
-                  <div className="intro-btns">
+                  <div
+                    className="intro-btns"
+                    data-aos="fade-up"
+                    data-aos-duration="1900"
+                  >
                     <a
                       href={`mailto:${detail.hireMe_link}`}
                       className="contactMe"
@@ -54,13 +83,23 @@ const Intro = () => {
                       </button>
                     </a>
                   </div>
-                  <div class="intro-contact">
+                  <div
+                    class="intro-contact"
+                    data-aos="fade-up"
+                    data-aos-duration="1800"
+                  >
                     <span>Follow Me:</span>
                     <ul>
                       <li>
                         {contacts1Details &&
                           contacts1Details.map((data1) => (
-                            <a href={data1.link} className="icon-link">
+                            <a
+                              href={data1.link}
+                              className="icon-link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              key={data1.id}
+                            >
                               <i className={data1.social_icon}></i>
                             </a>
                           ))}
@@ -68,8 +107,16 @@ const Intro = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="col-lg-7 col-md-6 col-sm-12 left-img ">
+                <div
+                  className="col-lg-7 col-md-6 col-sm-12 left-img "
+                  data-aos="fade-down-left"
+                >
                   <div className="ff">
+                    {/* <img
+                      className="intro-img"
+                      src="https://drive.google.com/uc?id=1iyVyaGyw5HniEugxd1-qZ54rpFpn2UTc"
+                      alt=""
+                    /> */}
                     <img
                       className="intro-img"
                       src={`${img_300}${detail.avatar_img}`}
@@ -79,7 +126,6 @@ const Intro = () => {
                 </div>
               </div>
             </div>
-            <div className="intro-links"></div>
           </section>
         ))}
     </>

@@ -63,7 +63,7 @@ const Projects = () => {
         {projectsDetails?.length && (
           <OwlCarousel className="owl-theme" {...options}>
             {projectsDetails?.map((details) => (
-              <div className="project">
+              <div className="project" data-aos="fade-up">
                 <div className="project-img">
                   <img
                     src={`${img_300}${details.about_avatar}`}
@@ -80,13 +80,28 @@ const Projects = () => {
                 <div className="work-details">
                   <h2>{details.Project_title}</h2>
                   <p className="work-info">{details.Project_info}</p>
-                  <Link
-                    to={details.project_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <h6 className="learnmore">Visit</h6>
-                  </Link>
+                  <div className="project-links">
+                    <a
+                      href={details.demo_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <h6 className="learnmore">
+                        <i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;
+                        Live Demo
+                      </h6>
+                    </a>
+                    <a
+                      href={details.project_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <h6 className="learnmore">
+                        <i class="fa fa-github" aria-hidden="true"></i> &nbsp;
+                        Source Code
+                      </h6>
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

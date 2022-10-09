@@ -17,6 +17,10 @@
   color: var(--color-title);
   font-weight: 600;
 }
+.project-links {
+  display: flex;
+  justify-content: space-between;
+}
 .mywork-title h3 {
   font-size: 2.2rem;
   text-transform: uppercase;
@@ -28,6 +32,8 @@
   min-width: 300px;
   background: var(--color-card-background);
   border-top-left-radius: 10px;
+  border: 1px solid rgb(255 255 255 / 0.1);
+
   border-top-right-radius: 10px;
 }
 .project-img {
@@ -84,6 +90,9 @@
   line-height: 1.7rem;
   white-space: normal;
 }
+.admin {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
 .who-post {
   display: flex;
   justify-content: center;
@@ -107,20 +116,23 @@
 .project .learnmore {
   background: transparent;
 
-  height: 36px;
-  width: 80px;
+  height: 30px;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   font-weight: 100;
   letter-spacing: 1px;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
+  background: rgb(32, 24, 77);
+  font-size: 11px;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 300;
   color: #fff !important;
   margin-top: 30px;
   cursor: pointer;
-  border: 1px solid var(--color-button-hover) !important;
+  /* border: 1px solid var(--color-button-hover) !important; */
   color: var(--color-button);
   border-radius: 4px;
 }
@@ -197,6 +209,6 @@
 }
 .light .project .learnmore {
   background: var(--btn-background) !important;
-  font-size: 12px;
+  font-size: 11px;
   color: #fff;
 }

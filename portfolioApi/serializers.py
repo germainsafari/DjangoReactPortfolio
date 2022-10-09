@@ -1,3 +1,4 @@
+from dataclasses import field
 from rest_framework import serializers
 from .models import *
 
@@ -41,4 +42,10 @@ class SocialMediaLinksSerializer(serializers.ModelSerializer):
 class MyProgressSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyProgress
+        fields = '__all__'
+
+
+class LanguagesIconsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LanguagesIcons
         fields = '__all__'

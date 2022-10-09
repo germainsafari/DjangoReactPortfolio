@@ -3,7 +3,7 @@
   width: 100%;
   padding: 0 40px;
   position: relative;
-  padding: 20px 40px;
+  padding: 100px 40px 20px 40px;
   background: var(--color-background-2);
 }
 
@@ -24,16 +24,37 @@
   flex-wrap: wrap;
 }
 .lang i {
-  font-size: 2.5rem;
-  margin-right: 5px;
+  font-size: 2.3rem;
   width: 50px;
+  cursor: pointer;
   height: 50px;
-  border-radius: 5px;
+  border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(46, 33, 92, 0.5);
+}
+.bxl-bootstrap {
+  color: rgb(125, 32, 187);
+}
+.lang-info {
+  display: flex;
+  margin-right: 15px;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.bxl-git {
+  color: orangered;
+}
+
+.lang-info p {
+  font-size: 13px;
+}
+.bxl-django {
+  color: green;
 }
 .abouMe-row .title h2 {
   font-size: 15px;
@@ -47,7 +68,7 @@
   text-transform: uppercase;
   width: 490px;
   font-weight: 500;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .about_description {
@@ -55,11 +76,15 @@
   position: relative;
   padding-left: 0 !important;
 }
+.pt-2 {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
 
 .about-description p {
   line-height: 1.9em;
   font-weight: 400;
   font-size: 14px;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 .about-dots {
@@ -99,6 +124,9 @@
 .bxl-javascript {
   color: yellow;
 }
+.bxl-postgresql {
+  color: rgb(255, 196, 0) !important;
+}
 .bxl-react {
   color: aqua;
 }
@@ -106,7 +134,7 @@
   color: #7c97ee;
 }
 .bxs-data {
-  color: rgb(49, 226, 43);
+  color: rgb(255, 238, 0);
 }
 .download-cv {
   margin-top: 20px;
@@ -124,6 +152,12 @@
   background: var(--color-button-hover);
 }
 
+/* Responsiveness */
+@media only screen and (min-width: 2560px) {
+  .abouMe-row img {
+    width: 50% !important;
+  }
+}
 @media only screen and (max-width: 865px) {
   .aboutMe-container {
     padding: 30px 10px;
@@ -139,6 +173,9 @@
   }
   .about-img {
     padding: 0 !important;
+  }
+  .about-info {
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace !important;
   }
   .abouMe-row {
     padding-left: 20px;
@@ -221,7 +258,7 @@
   }
   .about-img img {
     margin-right: 0 !important;
-    width: 80%;
+    width: 100%;
     margin-right: 0 !important;
   }
 }
@@ -234,6 +271,7 @@
     padding: 10px !important;
   }
 }
+
 /* light theme */
 .light .lang i {
   background: rgb(214, 214, 214);

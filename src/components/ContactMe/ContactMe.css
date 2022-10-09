@@ -1,9 +1,26 @@
 .contact-me2 {
   color: var(--color-info-light);
   max-width: 1400px;
-  padding: 30px 60px;
+  padding: 30px 60px 10px 60px;
   margin-top: 50px;
-  background: url("https://shcfc.org/wp-content/uploads/2018/07/Footer-Background-min.jpg");
+  position: relative;
+  background: #240054;
+}
+.contact-me2-dec {
+  content: "";
+  height: 300px;
+  width: 300px;
+  background: url("../../images/decoration/footer-left-dotted-img.png");
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 0;
+  z-index: 1 !important;
+  top: 0;
+}
+
+.contact-me2 .work-togater-text {
+  z-index: 200 !important;
+  position: relative !important;
 }
 .contact-title {
   margin-bottom: 30px;
@@ -123,8 +140,11 @@
   transition: all 0.2s cubic-bezier(0.98, 0.57, 1, 1) 0s;
 }
 .icon-name {
-  color: #cacaca !important;
+  color: #ffffff !important;
   font-size: 14px;
+}
+.d-name {
+  color: #cacaca !important;
 }
 .icon-cont {
   background: rgba(82, 95, 165, 0.1);
@@ -151,19 +171,23 @@
   font-size: 20px;
   border-radius: 50%;
   display: flex;
-  color: var(--color-title);
+  color: #fff;
   justify-content: center;
   align-items: center;
-  background: rgb(63, 45, 83) !important;
+  background: rgb(97 73 195) !important;
   height: 40px;
   width: 40px;
   border-radius: 50px;
 }
+#msg {
+  color: #cacaca !important;
+  font-size: 15px;
+}
 
 .contact-details p {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
-  color: #fff !important;
+  /* color: #fff !important; */
 }
 
 /* resposiveness */

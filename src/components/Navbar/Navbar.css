@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Meddon&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
 #header {
   transition: all 0.5s;
 
@@ -7,7 +8,7 @@
 }
 #header.header-inner-pages,
 #header.header-scrolled {
-  background: rgba(24, 6, 185, 0.8);
+  background-color: rgb(15 23 42/ 0.8) !important;
 }
 #header .logo {
   margin: 0;
@@ -61,7 +62,7 @@
 nav {
   display: flex !important;
   float: right;
-  padding-right: 120px;
+  padding-right: 40px;
 }
 .nav-menu ul {
   margin: 0;
@@ -78,10 +79,21 @@ nav {
 }
 
 .nav-menu > ul > li a {
-  font-size: 14px;
+  font-size: 14px !important;
   letter-spacing: 1px;
-  font-family: "poppins", sans-serif;
   font-weight: 100;
+
+  position: relative;
+  font-style: normal;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.nav-menu > ul > li span {
+  color: #7eeb7e !important;
 }
 
 .descript {
@@ -95,11 +107,12 @@ nav {
 .left-btns .CvMe {
   margin-left: 20px;
 }
+
 .CvMe button {
   background: var(--color-button-hover) !important;
-  height: 40px;
+  height: 50px;
   border-radius: 5px;
-  width: 100px;
+  width: 130px;
   color: #fff;
   font-size: 13px;
 }
@@ -192,7 +205,7 @@ nav {
   z-index: 1;
 }
 
-/* mobile */
+/* mobile responsive */
 @media only screen and (max-width: 1024px) {
   .navi {
     padding-left: 20px !important;
@@ -329,7 +342,9 @@ nav {
     border-radius: 5px;
     padding: 10px 20px;
   }
-
+  .nav-social i {
+    display: none;
+  }
   .lefty {
     padding-left: 0 !important;
   }
@@ -368,6 +383,9 @@ nav {
   #theme-button2 {
     right: 15px;
   }
+  .devman {
+    font-size: 1.4rem;
+  }
 }
 @media only screen and (max-width: 320px) {
   .left-btns {
@@ -378,9 +396,41 @@ nav {
 }
 .devman {
   color: var(--color-button-hover) !important;
-  font-size: 2rem !important;
-  font-weight: 500;
-  font-family: "Jost", sans-serif !important;
+  font-size: 1.6rem !important;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0 !important;
+
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  align-items: center;
+  font-weight: 800 !important;
+}
+.devman span {
+  color: rgb(39, 47, 56);
+}
+.devman img {
+  width: 30px;
+  margin-right: 5px;
+}
+.nav-social i {
+  font-size: 18px;
+  margin-top: 2px;
+  margin-right: 15px;
+  color: #adadad;
+}
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
 
 /* light theme settings */

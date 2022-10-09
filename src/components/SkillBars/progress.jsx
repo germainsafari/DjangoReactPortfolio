@@ -45,7 +45,11 @@ const Progress = () => {
           <div className="progress-row2">
             {progressDetail &&
               progressDetail.map((progress) => (
-                <div className=" col-lg-6 col-md-6">
+                <div
+                  className=" col-lg-6 col-md-6"
+                  key={progress.id}
+                  data-aos="zoom-in"
+                >
                   <div className="progress-bar2">
                     <div className="skill-info pt-2">
                       <div className="skill-detail">
