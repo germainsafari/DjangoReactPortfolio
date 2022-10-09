@@ -10,7 +10,7 @@
 
  These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 ### Step 1:Clone the repository
-     git clone https://github.com/tech-jamara/ReactDjangoPortfolio.git
+     git clone https://github.com/tech-jamara/DjangoReactPortfolio.git
 ### step 2:Navigate to the clone 
      cd your_path/DjangoReactPortfolio
 ### Step 3: Install Node.js dependencies:
