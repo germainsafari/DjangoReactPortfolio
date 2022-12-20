@@ -27,7 +27,7 @@ class HomeDetails(models.Model):
 class AboutMe(models.Model):
     title = models.CharField(max_length=20, blank=True, null=True)
     title_2 = models.CharField(max_length=100, blank=True, null=True)
-    description_one = tinymce_models.HTMLField(blank=True, null=True)
+    description_one = RichTextField(blank=True, null=True)
     about_avatar = models.CharField(max_length=100, blank=True, null=True,                    verbose_name="Google Drive Image Id"
                                     )
 
