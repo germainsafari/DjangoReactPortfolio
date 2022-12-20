@@ -2,9 +2,6 @@
   text-align: center;
   background: var(--color-background);
 }
-.homepage {
-  height: 750px;
-}
 .cursor-dot,
 .cursor-dot-outline {
   z-index: 9000;
@@ -37,18 +34,6 @@
   left: 50px;
   top: 90px;
 }
-.homepage::before {
-  content: "";
-  background-image: url("/src/images/decoration/background.png");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  height: 750px !important;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.2;
-}
 
 .load_app {
   display: flex;
@@ -57,14 +42,4 @@
   height: 100%;
   margin-top: 130px !important;
   flex-direction: column;
-}
-@media only screen and (min-width: 768px) {
-  .homepage {
-    height: 610px;
-  }
-}
-
-.light .homepage::before {
-  background: none !important;
-  opacity: 0.2;
 }

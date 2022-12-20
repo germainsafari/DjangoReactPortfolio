@@ -5,7 +5,6 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import { Link } from "react-router-dom";
 
 const Projects = () => {
   const { data: projects, isFetching } = useGetProjectsQuery();
@@ -30,19 +29,19 @@ const Projects = () => {
         items: 1,
       },
       600: {
-        items: 2,
+        items: 1,
       },
-      700: {
+      740: {
         items: 2,
       },
       1000: {
         items: 2.7,
       },
       1300: {
-        items: 3.7,
+        items: 3,
       },
       1440: {
-        items: 3.7,
+        items: 3,
       },
     },
   };
@@ -56,8 +55,9 @@ const Projects = () => {
   return (
     <div className="mywork " id="work">
       <div className="mywork-title">
-        <h2>My Work</h2>
-        <h3>Check Out My Reacet Projects</h3>
+        <h2>Check Out My Reacet Projects</h2>
+
+        <h3>My Work</h3>
       </div>
       <div className="project-row">
         {projectsDetails?.length && (

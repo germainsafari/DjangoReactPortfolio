@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700;800&display=swap");
 .aboutMe-container {
   color: var(--color-info-light);
   width: 100%;
@@ -17,42 +18,15 @@
   width: 80%;
   margin-right: 0 !important;
 }
-.lang {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.lang i {
-  font-size: 2.3rem;
-  width: 50px;
-  cursor: pointer;
-  height: 50px;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  background: rgba(46, 33, 92, 0.5);
-}
+
 .bxl-bootstrap {
   color: rgb(125, 32, 187);
 }
-.lang-info {
-  display: flex;
-  margin-right: 15px;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-}
+
 .bxl-git {
   color: orangered;
 }
 
-.lang-info p {
-  font-size: 13px;
-}
 .bxl-django {
   color: green;
 }
@@ -77,14 +51,15 @@
   padding-left: 0 !important;
 }
 .pt-2 {
-  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
 .about-description p {
-  line-height: 1.9em;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
-  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  line-height: 1.9rem;
+  font-weight: 400;
+  font-family: poppins, sans-serif !important;
 }
 
 .about-dots {
@@ -137,7 +112,6 @@
   color: rgb(255, 238, 0);
 }
 .download-cv {
-  margin-top: 20px;
   height: 60px;
   width: 180px;
   outline: none;
@@ -147,9 +121,48 @@
   font-size: 13px;
   border: none;
   color: var(--color-background-2);
-  border-radius: 50px;
+  border-radius: 5px;
   border: 1px solid var(--color-button);
   background: var(--color-button-hover);
+}
+
+/*  */
+/*  */
+*.unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none !important;
+}
+.ck-editor__top {
+  display: none !important;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none !important;
+}
+.ck-editor__top p,
+strong,
+i {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none !important;
+}
+.ck-content {
+  user-select: none !important;
+}
+.ck-content i {
+  color: #006eff !important;
+  pointer-events: none;
+}
+.ck.ck-editor__main > .ck-editor__editable {
+  background: none !important;
+  border: none !important;
+  pointer-events: none !important;
 }
 
 /* Responsiveness */
@@ -175,7 +188,7 @@
     padding: 0 !important;
   }
   .about-info {
-    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace !important;
+    font-family: "Source Code Pro", monospace;
   }
   .abouMe-row {
     padding-left: 20px;

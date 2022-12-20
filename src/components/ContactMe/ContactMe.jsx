@@ -1,20 +1,13 @@
 import "./ContactMe.css";
-import { useGetContactsQuery } from "../../Api/api";
-import { useEffect, useState } from "react";
 
 const ContactMe = () => {
-  const { data: contacts, isFetching } = useGetContactsQuery();
-
-  const [contactsDetails, setContactDetails] = useState(contacts);
-  // const img_300 = "http://127.0.0.1:8000";
-  useEffect(() => {
-    setContactDetails(contacts);
-  }, [contactsDetails, contacts]);
-  if (isFetching) return "loading";
   return (
     <>
-      <section id="contact">
+      <section id="contact ">
         <div className="contact-me2">
+          <div className="contactme-t1 pb-3">
+            <h2>Newsletter</h2>
+          </div>
           <div className="contact-me2-dec"></div>
           <div class="row align-items-center mb-5">
             <div class="col-lg-5 col-md-12">
@@ -44,18 +37,6 @@ const ContactMe = () => {
                 </button>
               </div>
             </div>
-          </div>
-          <div className="contact-row">
-            {contactsDetails &&
-              contactsDetails.map((details) => (
-                <div className="contact-info " key={details.id}>
-                  <div className="contact-details">
-                    <i className={details.icon}></i>
-                    <h4 className="icon-name">{details.contact_name}:</h4>
-                    <p className="d-name">{details.contact_info}</p>
-                  </div>
-                </div>
-              ))}
           </div>
         </div>
       </section>

@@ -1,4 +1,7 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+
+from tinymce import models as tinymce_models
 
 
 class HomeDetails(models.Model):
@@ -21,24 +24,10 @@ class HomeDetails(models.Model):
         return self.name
 
 
-class SocialMediaLinks(models.Model):
-    name = models.CharField(max_length=80, blank=True, null=True)
-    social_icon = models.CharField(
-        max_length=60, blank=True, null=True, verbose_name="Icon (eg: fa -fa-twitter)")
-    link = models.URLField(blank=True, null=True),
-
-    class Meta:
-        verbose_name_plural = 'Social Media Links'
-
-    def __str__(self):
-        return self.social_icon
-
-
 class AboutMe(models.Model):
     title = models.CharField(max_length=20, blank=True, null=True)
     title_2 = models.CharField(max_length=100, blank=True, null=True)
-    description_one = models.TextField(blank=True, null=True)
-    description_two = models.TextField(blank=True, null=True)
+    description_one = tinymce_models.HTMLField(blank=True, null=True)
     about_avatar = models.CharField(max_length=100, blank=True, null=True,                    verbose_name="Google Drive Image Id"
                                     )
 
@@ -64,27 +53,26 @@ class ServicesOffred(models.Model):
         return self.service_name
 
 
-class MyProgress(models.Model):
-    language = models.CharField(max_length=40, blank=True, null=True)
-    percentage = models.IntegerField(blank=True, null=True)
-    icon = models.CharField(max_length=40, blank=True, null=True)
-
-    class Meta:
-        verbose_name_plural = 'Skills Section'
-
-    def __str__(self):
-        return self.language
-
-
 class LanguagesIcons(models.Model):
-    icon = models.CharField(max_length=100, blank=True)
-    lang_name = models.CharField(max_length=100, blank=True)
+    EXP_CHOICES = (
+        ("Beginner", "Beginner"),
+        ("Junior", "Junior"),
+        ("Intermediate", "Intermediate"),
+        ("Experienced", "Experienced"),
+    )
+
+    icon = models.CharField(max_length=100, blank=True,
+                            verbose_name="language Icon Image:(icons8.com)")
+    lang_name = models.CharField(
+        max_length=100, blank=True, verbose_name="Language Name")
+    exp_level = models.CharField(max_length=200, blank=True, choices=EXP_CHOICES,
+                                 verbose_name="Experience Level")
 
     class Meta:
-        verbose_name_plural = 'Languages Icons'
+        verbose_name_plural = 'Skills section'
 
     def __str__(self):
-        return self.icon
+        return self.lang_name
 
 
 class Project(models.Model):
@@ -108,13 +96,26 @@ class Project(models.Model):
 class MyContact(models.Model):
     icon = models.CharField(max_length=90, blank=True,
                             null=True, verbose_name="Icon (eg: fa -fa-twitter)")
+    contact_info = models.CharField(
+        max_length=100, blank=True, null=True, verbose_name="Contact Info (eg: johndoe2@gmail.com)")
     contact_name = models.CharField(
         max_length=30, blank=True, null=True, verbose_name="Contact Name (eg: twitter)")
-    contact_info = models.CharField(
-        max_length=100, blank=True, null=True, verbose_name="Contact Info (eg: johndoe@gmail.com)")
 
     class Meta:
         verbose_name_plural = 'Contacts Section'
 
     def __str__(self):
         return self.contact_name
+
+
+class SocialMediaLinks(models.Model):
+    name = models.CharField(max_length=80, blank=True, null=True)
+    link = models.URLField(blank=True, null=True)
+    social_icon = models.CharField(
+        max_length=60, blank=True, null=True, verbose_name="Icon (eg: fa -fa-twitter)")
+
+    class Meta:
+        verbose_name_plural = 'Hero section Social Media Links'
+
+    def __str__(self):
+        return self.social_icon

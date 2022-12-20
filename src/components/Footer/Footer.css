@@ -2,8 +2,8 @@
 .my-footer {
   color: var(--color-info-light);
   max-width: 1400px;
-  padding: 0 50px;
-  background: #5414ac;
+  padding: 20px 50px;
+  background: #14042b;
 }
 .footer-info {
   display: flex;
@@ -75,7 +75,6 @@
   bottom: 20px;
   height: 46px;
   width: 46px;
-
   cursor: pointer;
   display: block;
   border-radius: 50px;
@@ -129,7 +128,24 @@
   display: flex;
   padding: 15px 0 0 0;
   align-items: center;
+  font-weight: 600;
   justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+.buy-coffee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  cursor: pointer;
+  z-index: 200;
+  left: 10px;
+  bottom: 20px;
+  border-radius: 50%;
+}
+.buy-coffee img {
+  width: 50px;
 }
 
 /* Responsive */

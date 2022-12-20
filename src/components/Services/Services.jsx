@@ -18,8 +18,9 @@ const Services = () => {
       <section id="services">
         <div className="service-container">
           <div className="service-title">
-            <h2>Services</h2>
-            <h3>What Service i Offer you</h3>
+            <h2>What Service i Offer you</h2>
+
+            <h3>Services</h3>
           </div>
 
           <div className="service-row">
@@ -31,7 +32,9 @@ const Services = () => {
                   data-aos="zoom-in-up"
                   data-aos-duration="1500"
                 >
-                  <img src={`${img_300}${service.icon_image}`} alt="" />
+                  <div className="ser-back">
+                    <img src={`${img_300}${service.icon_image}`} alt="" />
+                  </div>
                   <h4 className="web">{service.service_name}</h4>
                   <p className="service-info">{service.service_description}</p>
                   {/* <h6 className="learn-more">{service.learn_more}</h6> */}

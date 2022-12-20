@@ -2,10 +2,10 @@ import "./Footer.css";
 import Main from "./scrollTop";
 import { useGetSocialMediaQuery } from "../../Api/api";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 const Footer = () => {
   const { data: social, isFetching } = useGetSocialMediaQuery();
   const [socialDetails, setSocialDetails] = useState(social);
+
   useEffect(() => {
     setSocialDetails(social);
 
@@ -16,7 +16,6 @@ const Footer = () => {
   return (
     <>
       <Main />
-      {/* <hr /> */}
       <section>
         <div className="my-footer">
           <div class="switch">
@@ -33,14 +32,13 @@ const Footer = () => {
 
               <p>eee</p>
             </svg>
-            {/* <i class="bx bxs-chevron-up"></i> */}
             <i class="bx bx-chevron-up"></i>
           </div>
           <div className="footer-info">
             <div className="copywrite">
               <p>
-                Copyright ©2022 All rights reserved | Made with ❤️ by James
-                Waweru
+                © {new Date().getFullYear()} All rights reserved | Made with ❤️
+                by James Waweru
               </p>
             </div>
           </div>
