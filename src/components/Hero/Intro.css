@@ -3,7 +3,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap");
 .intro-page {
   position: relative;
-  height: auto;
+  z-index: 2;
+}
+.intro-page::after {
+  content: "";
+  background-image: url("/src/images/decoration/background.png");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.2;
+}
+.small-intro {
+  opacity: 0.9 !important;
 }
 
 .decor-dot2 {
@@ -484,4 +499,8 @@
 }
 .light .intro-contact span {
   color: #020222 !important;
+}
+.light .intro-page::after {
+  background: none !important;
+  opacity: 0.2;
 }

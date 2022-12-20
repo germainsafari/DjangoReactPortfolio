@@ -12,16 +12,15 @@ const Intro = () => {
   const [homeDetails, setHomeDetails] = useState(homeData);
   const [contacts1Details, setContact2Details] = useState(conta);
   const img_300 = "http://drive.google.com/uc?id=";
-  const doc = homeDetails && homeDetails.map((detail2) => detail2.name);
+  const title_name = homeDetails && homeDetails.map((detail2) => detail2.name);
 
   useEffect(() => {
     setHomeDetails(homeData);
     setContact2Details(conta);
 
-    document.title = doc;
-
+    document.title = title_name;
     // console.log(conta);
-  }, [homeDetails, homeData, contacts1Details, conta, doc]);
+  }, [homeDetails, homeData, contacts1Details, conta, title_name]);
   if (isFetching) return "loading";
 
   return (

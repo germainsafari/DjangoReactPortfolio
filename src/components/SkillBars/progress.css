@@ -1,12 +1,12 @@
 .progress-container {
   color: var(--color-info-light);
-  padding: 70px 50px;
+  padding: 20px 50px 120px 50px;
   background: var(--color-background-2);
 }
 .progress-row2 {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .fullwidth {
@@ -57,6 +57,7 @@
 }
 .progress-title {
   margin-bottom: 50px;
+  text-align: center;
 }
 .progress {
   width: 100%;
@@ -74,7 +75,6 @@
   font-weight: 600;
 }
 .progress-title h3 {
-  width: 300px;
   text-transform: capitalize;
   font-size: 2.5rem;
 }
@@ -103,7 +103,7 @@
 }
 .progress-container .bxl-django {
   color: green;
-  font-size: 18px !important;
+  font-size: 3.7rem !important;
   margin-top: 3px;
 }
 .bxl-firebase {
@@ -115,7 +115,75 @@
 .bx-code-block {
   color: rgb(255, 0, 179);
 }
+.mylang {
+  background: var(--color-card2);
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px 0;
+  align-items: center;
+  border: 1px solid rgba(146, 146, 165, 0.1);
+}
+.mylang h3 {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+}
+.mylang p {
+  border: 1px solid rgb(37, 43, 88);
+  border-radius: 10px;
+  padding: 0 20px;
+}
 
+.lang {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between !important;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.lang-img {
+  font-size: 3.7rem;
+  width: 70px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  height: 70px;
+  margin-top: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(23, 32, 61);
+  /* box-shadow: 0px 3px 5px rgb(16 70 197 / 20%); */
+}
+.lang-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.lang-info img {
+  width: 48px;
+  height: 48px;
+}
+.lang-info p {
+  font-size: 13px;
+}
+.mylang .Junior {
+  color: #eb997c !important;
+}
+.mylang .Beginner {
+  color: #e6cc79 !important;
+}
+.mylang .Intermediate {
+  color: #c774b9 !important;
+}
+.mylang .Experienced {
+  color: #dd83dd !important;
+}
 /* responsive */
 @media only screen and (max-width: 768px) {
   .progress-title {
@@ -134,4 +202,27 @@
 /*light theme  */
 .light .skill-bar {
   background: var(--btn-background);
+}
+.light .mylang h3 {
+  color: #000;
+}
+.light .lang-img {
+  background: rgb(240, 239, 239);
+}
+.light .mylang p {
+  border: 1px solid rgb(215, 217, 231);
+  line-height: normal !important;
+}
+
+.light .mylang .Junior {
+  color: #e26537 !important;
+}
+.light .mylang .Beginner {
+  color: #91ff00 !important;
+}
+.light .mylang .Intermediate {
+  color: #d823ba !important;
+}
+.light .mylang .Experienced {
+  color: #e6227d !important;
 }

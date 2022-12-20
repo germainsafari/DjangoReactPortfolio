@@ -1,9 +1,5 @@
 import "./AboutMe.css";
-import {
-  useGetAboutMeQuery,
-  useGetHomeDetailsQuery,
-  useGetLanguagesIconsQuery,
-} from "../../Api/api";
+import { useGetAboutMeQuery, useGetHomeDetailsQuery } from "../../Api/api";
 import { useEffect, useState } from "react";
 import decor1 from "../../images/decoration/dots-1.png";
 import reactagle from "../../images/decoration/Rectangle-7.png";
@@ -11,10 +7,8 @@ import shady from "../../images/decoration/dots.png";
 
 const AboutMe = () => {
   const { data: aboutData, isFetching } = useGetAboutMeQuery();
-  const { data: langIcons } = useGetLanguagesIconsQuery();
   const [aboutMe, setAboutMe] = useState(aboutData);
-  const [icons, setIcons] = useState(langIcons);
-  const img_300 = "http://drive.google.com/uc?id=";
+  const img_300 = "https://drive.google.com/uc?id=";
 
   const { data: conta2 } = useGetHomeDetailsQuery();
   const [contacts1Details, setContact2Details] = useState(conta2);
@@ -25,10 +19,7 @@ const AboutMe = () => {
   useEffect(() => {
     setAboutMe(aboutData);
     setContact2Details(conta2);
-
-    setIcons(langIcons);
-    console.log(langIcons);
-  }, [aboutMe, aboutData, langIcons, icons, contacts1Details, conta2]);
+  }, [aboutData, conta2]);
 
   return (
     <>
@@ -63,19 +54,15 @@ const AboutMe = () => {
                     <h3>{details.title_2}</h3>
                   </div>
                   <div className="about-description">
-                    <p className="about-info">{details.description_one}</p>
-                    {/* <p className="about-info-2">{details.description_two}</p> */}
+                    <div id="foo" unselectable="on" class="unselectable">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: `${details.description_one}`,
+                        }}
+                      />
+                    </div>
                   </div>
 
-                  <div className="lang">
-                    {icons &&
-                      icons.map((details4) => (
-                        <div className="lang-info">
-                          <i class={details4.icon} key={details4.id}></i>
-                          <p className="pt-2">{details4.lang_name}</p>
-                        </div>
-                      ))}
-                  </div>
                   <div className="itscv">
                     <a
                       href="https://drive.google.com/file/d/127RCSy1lUZE2sS8IgkxxPcUqbw1rYMOR/view"

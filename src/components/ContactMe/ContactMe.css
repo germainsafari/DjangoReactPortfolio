@@ -1,21 +1,11 @@
 .contact-me2 {
   color: var(--color-info-light);
   max-width: 1400px;
-  padding: 30px 60px 10px 60px;
-  margin-top: 50px;
+  padding: 40px 60px 10px 30px;
+  margin: 50px 50px 30px 50px;
   position: relative;
-  background: #240054;
-}
-.contact-me2-dec {
-  content: "";
-  height: 300px;
-  width: 300px;
-  background: url("../../images/decoration/footer-left-dotted-img.png");
-  position: absolute;
-  background-repeat: no-repeat;
-  left: 0;
-  z-index: 1 !important;
-  top: 0;
+  background: #0c0122;
+  border-radius: 20px;
 }
 
 .contact-me2 .work-togater-text {
@@ -46,22 +36,6 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-.contact-info {
-  flex-basis: 24%;
-  min-width: 260px !important;
-  display: flex !important;
-  cursor: pointer;
-  align-items: center;
-  text-align: left;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 20px 0px 20px 10px;
-}
-
-.contact-details {
-  margin-right: 30px;
 }
 
 .work-togather-form {
@@ -119,7 +93,7 @@
 
 .sec-btn {
   font-family: "Rubik", sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 24px;
   font-weight: 500;
   text-align: center;
@@ -128,16 +102,13 @@
   height: 60px;
   background: rgb(194, 120, 251);
   background: var(--color-button-hover);
-  -webkit-box-shadow: 5px 5px 30px 0px rgb(195 120 251 / 35%);
-  -moz-box-shadow: 5px 5px 30px 0px rgba(195, 120, 251, 0.35);
-  box-shadow: 5px 5px 30px 0px rgb(195 120 251 / 35%);
+  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.35);
   display: inline-block;
   overflow: hidden;
-  padding: 18px 40px;
-  border-radius: 30px;
+  padding: 18px 20px;
+  border-radius: 15px;
   position: relative;
   z-index: 1;
-  transition: all 0.2s cubic-bezier(0.98, 0.57, 1, 1) 0s;
 }
 .icon-name {
   color: #ffffff !important;
@@ -166,19 +137,7 @@
   margin-bottom: 10px;
   font-size: 16px;
 }
-.contact-info i {
-  margin-bottom: 10px;
-  font-size: 20px;
-  border-radius: 50%;
-  display: flex;
-  color: #fff;
-  justify-content: center;
-  align-items: center;
-  background: rgb(97 73 195) !important;
-  height: 40px;
-  width: 40px;
-  border-radius: 50px;
-}
+
 #msg {
   color: #cacaca !important;
   font-size: 15px;
@@ -191,9 +150,25 @@
 }
 
 /* resposiveness */
+@media only screen and (max-width: 991px) {
+  .work-togather-form {
+    padding-left: 0px;
+  }
+}
 @media only screen and (max-width: 768px) {
   .contact-me2 .contact-title {
     text-align: center;
+  }
+  .work-togather-form {
+    margin-bottom: 20px;
+  }
+  .work-togather-form-btn {
+    float: right;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .contact-me2 {
+    margin: 20px;
   }
 }
 
@@ -207,6 +182,15 @@
   .contact-me2 {
     padding: 30px 20px;
     background: #0c0122;
+  }
+  .work-togather-text h2 {
+    font-size: 1.5rem;
+  }
+  .work-togather-form {
+    margin-bottom: 0px;
+  }
+  .work-togather-form input {
+    height: 55px;
   }
 }
 

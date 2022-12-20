@@ -39,12 +39,6 @@ class SocialMediaLinksSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class MyProgressSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MyProgress
-        fields = '__all__'
-
-
 class LanguagesIconsSerializer(serializers.ModelSerializer):
     class Meta:
         model = LanguagesIcons
