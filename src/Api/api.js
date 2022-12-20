@@ -1,8 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // api url
-// const baseUrl = "https://jameswaweru2.vercel.app/api/";
-const baseUrl = "http://127.0.0.1:8000/api/";
+const baseUrl = "http://127.0.0.1:8000/api";
 
 // Heroes' Section
 export const HomeDetails = createApi({
