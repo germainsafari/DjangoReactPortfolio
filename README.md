@@ -4,7 +4,7 @@
 #### DEMO: http://jameswaweru.vercel.app/
 
 
-<kbd><img src="https://drive.google.com/uc?id=19fHCBzwyyzbHSfNPuFLuFDmLhgwsCe6-"  /></kbd>
+
 
 ## Run these Commads
 
@@ -30,4 +30,3 @@
 ### Did not work for you do not worry you can run them separately django separate from react. I know you know how 😊.
 ### Still did not work😢, worry not, just contact me or visit our lovely friend stackoverflow.
 
-<a href="https://www.buymeacoffee.com/jameswaweru" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
